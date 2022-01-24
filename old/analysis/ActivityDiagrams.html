@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>CS 200 Term Project -- Group 6</title>
+      <meta name="description" content="CS 200 Term Project">
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <link
+         href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="../style.css" />
+      <link rel="icon" href="../assets/ForIco.ico">
+   </head>
+
+   <body>
+      <nav>
+         <input type="checkbox" id="check">
+         <label for="check" class="checkbtn">
+         <i class="fa fa-bars"></i>
+         </label>
+         <label class="logo">				
+         <img src="../assets/Team icon.svg" alt="logo">
+         </label>
+         <ul>
+	        <li><a href="./report.html">Analysis Home</a></li>
+	        <li><a href="Stereotyped.html">Stereotyped Class Diagram</a></li>
+	        <li><a class="active" href="ActivityDiagrams.html">Activity Diagrams</a></li>
+         </ul>
+      </nav>
+
+      
+      
+      <div class="spacer"></div>
+
+      <div class="dropdown">
+         <div class="title">
+            <h1>Activity Diagrams</h1>
+         </div>
+         <button type="button" class="collapsible">Main Diagram</button>
+         <div class="content">
+            <img class="MainDiagram" src="../assets/ActivityDiagrams/MainAD.png">
+         </div>
+
+         <div class="spacer"></div>
+
+         <button type="button" class="collapsible">Update Member Information</button>
+         <div class="content">
+            <table>
+               <tr>
+                  <th>Update Member Information</th>
+                  <th>Add Member</th>
+               </tr>
+               <tr>
+                  <td><div><img class="ActivityDiagrams" src="../assets/ActivityDiagrams/MemberInfo.png"></div></td>
+                  <td><div><img class="ActivityDiagrams" src="../assets/ActivityDiagrams/AddMem.png"></div></td>
+               </tr>
+               <tr>
+                  <th>Remove Member</th>
+                  <th>Update Member</th>
+               </tr>
+               <tr>
+                  <td><div><img class="ActivityDiagrams" src="../assets/ActivityDiagrams/RemoveMem.png"></div></td>
+                  <td><div><img class="ActivityDiagrams" src="../assets/ActivityDiagrams/UpdateMem.png"></div></td>
+               </tr>
+            </table>
+         </div>
+         <button type="button" class="collapsible">Update Provider Information</button>
+         <div class="content">
+            <table>
+               <tr>
+                  <th>Update Provider Information</th>
+                  <th>Add Provider</th>
+               </tr>
+               <tr>
+                  <td><div><img class="ActivityDiagrams" src="../assets/ActivityDiagrams/ProviderInfo.png"></div></td>
+                  <td><div><img class="ActivityDiagrams" src="../assets/ActivityDiagrams/Add Provider.png"></div></td>
+               </tr>
+               <tr>
+                  <th>Remove Provider</th>
+                  <th>Update Provider</th>
+               </tr>
+               <tr>
+                  <td><div><img class="ActivityDiagrams" src="../assets/ActivityDiagrams/Remove Provider.png"></div></td>
+                  <td><div><img class="ActivityDiagrams" src="../assets/ActivityDiagrams/Update Provider.png"></div></td>
+               </tr>
+            </table>
+         </div>
+         <button type="button" class="collapsible">Run Main Accounting Procedure</button>
+         <div class="content">
+            <table>
+               <tr>
+                  <th>Run Main Accounting Procedure</th>
+               </tr>
+               <tr>
+                  <td><div><img class="ActivityDiagrams" src="../assets/ActivityDiagrams/RunMain.png"></div></td>
+               </tr>
+               <tr>
+                  <th>Email Member Report</th>
+                  <th>Email Provider Report</th>
+               </tr>
+               <tr>
+                  <td><div><img class="ActivityDiagrams" src="../assets/ActivityDiagrams/EmailMemberReport.png"></div></td>
+                  <td><div><img class="ActivityDiagrams" src="../assets/ActivityDiagrams/EmailProviderReport.png"></div></td>
+               </tr>
+               <tr>
+                  <th>Email Summary Report</th>
+                  <th>Create EFT Report</th>
+               </tr>
+               <tr>
+                  <td><div><img class="ActivityDiagrams" src="../assets/ActivityDiagrams/EmailSummaryReport.png"></div></td>
+                  <td><div><img class="ActivityDiagrams" src="../assets/ActivityDiagrams/EFTReport.png"></div></td>
+               </tr>
+            </table>
+         </div>
+         <button type="button" class="collapsible">Provider Use Cases</button>
+         <div class="content">
+            <table>
+               <tr>
+                  <th>Record Bill Member</th>
+               </tr>
+               <tr>
+                  <td><div><img class="ActivityDiagrams" src="../assets/ActivityDiagrams/RecordBillforMember.png"></div></td>
+               </tr>
+               <tr>
+                  <th>Validate Membership</th>
+               </tr>
+               <tr>
+                  <td><div><img class="ActivityDiagrams" src="../assets/ActivityDiagrams/validatemembership.png"></div></td>
+               </tr>
+               <tr>
+                  <th>Request Provider Directory</th>
+               </tr>
+               <tr>
+                  <td><div><img class="ActivityDiagrams" src="../assets/ActivityDiagrams/Request Provider Directory.png"></div></td>
+               </tr>
+            </table>
+         </div>
+      </div>
+
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+
+      <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+         this.classList.toggle("active");
+         var content = this.nextElementSibling;
+         if (content.style.display === "block") {
+            content.style.display = "none";
+         } else {
+            content.style.display = "block";
+         }
+      });
+      }
+      </script>
+
+   </body>
+</html>

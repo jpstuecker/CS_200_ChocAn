@@ -1,0 +1,17 @@
+Name: Mary Doe
+Provider Number: 0
+Address: 199 Transit St
+City: Providence
+State: RI
+Zip Code: 02906
+
+Date/Time Provided: 04-20-2021
+Computer Date/Time: 04-21-2021
+Member Name: Becky Smith
+Member Number: 0
+Service Code: 0
+Fee: 35.4
+
+Total number of consultations: 1
+Total fee for week: 35.4
+

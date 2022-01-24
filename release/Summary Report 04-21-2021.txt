@@ -1,0 +1,6 @@
+Mary Doe
+Consultations: 1
+Total fee for week: 35.4
+
+Total Consultations: 1
+Overall Fee: 35.4

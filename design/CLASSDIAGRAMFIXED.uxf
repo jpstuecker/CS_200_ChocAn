@@ -1,0 +1,224 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>2050</x><y>81</y><w>430</w><h>80</h></coordinates><panel_attributes>Provider [Entity]
+--
++Provider(name : string, street : string, city : string, zip : string, state : string)
+
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1750</x><y>501</y><w>300</w><h>420</h></coordinates><panel_attributes>Record [Entity]
+--
+#dateTime : Date
+#dateProvided : Date
+#dateProvided : string
+#providerNumber : int
+#memberNumber : int
+#serviceCode : int
+#serviceNumber : int
+#comments : string
+#fee : double
+--
++getDateTime() : Date
++setDateTime(obj : Object, str : Date) : void
++getDateProvided() : Date
++setDateProvided(obj : Object, str : Date) : void
++getProviderNumber() : int
++setProviderNumber(obj : Object, number : int) : void
++getMemberNumber() : int
++setMemberNumber(obj : Object, number : int) : void
++getServiceCode() : int
++setServiceCode(obj : Object, number : int) : void
++getComments() : string
++setComments(obj : Object, str : string) : void
++getFee() : double
++setFee(obj : Object, number : double) : void
++getServiceNumber() : int
++setServiceNumber(obj : Object, number : int) : void
+bg=blue
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2040</x><y>241</y><w>500</w><h>160</h></coordinates><panel_attributes>Member [Entity]
+--
+-Status : enum
+--
++Member(name : string, status : string, street : string, city : string, zip : string, state : string)
++getStatus() : string
++setStatus(status : string) : void
+
+
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1680</x><y>91</y><w>250</w><h>310</h></coordinates><panel_attributes>Person [Entity]
+--
+-name : string
+-street : string
+-city : string
+-state : string
+-zip : string
+-number : int
+--
++getNumber() : int
++setnumber(obj : Object, number : int) : void
++getName() : string
++setName(name : string) : void
++getStreet() : string
++setStreet(street : string) : void
++getCity() : string
++setCity(city : string) : void
++getState() : string
++setState(state : string) : void
++getZip() : string
++setZip(zip : string) : void
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1920</x><y>161</y><w>140</w><h>170</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;60;10;60;150;120;150</additional_attributes></element><element><id>Relation</id><coordinates><x>1920</x><y>111</y><w>150</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;60;60;60;60;10;130;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>780</x><y>241</y><w>220</w><h>80</h></coordinates><panel_attributes>OperatorInterface [Boundary]
+--
+-Type : enum
+-MemberData : enum
+-ProviderData : enum
+
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>870</x><y>851</y><w>220</w><h>70</h></coordinates><panel_attributes>MainAccountingProcedure [Control]
+--
+_+runReports() : boolean_
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>851</y><w>220</w><h>70</h></coordinates><panel_attributes>Clock [Boundary]
+--
+_+main() : void_
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>970</x><y>701</y><w>60</w><h>170</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;
+m1=1
+m2=1
+calls </panel_attributes><additional_attributes>10;150;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>481</y><w>290</w><h>60</h></coordinates><panel_attributes>MemberReport [Boundary]
+--
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>750</x><y>871</y><w>140</w><h>50</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;
+m1=1
+m2=1
+triggers</panel_attributes><additional_attributes>10;20;120;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>401</y><w>290</w><h>50</h></coordinates><panel_attributes>ProviderReport [Boundary]
+--
+bg=red
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>291</y><w>290</w><h>90</h></coordinates><panel_attributes>EftReport [Boundary]
+--
+-success : boolean
+--
++getSuccess() : boolean
++setSuccess(success : boolean) : void
+bg=red
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>181</y><w>290</w><h>80</h></coordinates><panel_attributes>SummaryReport [Boundary]
+--
+-success : boolean
+--
++getSuccess() : boolean
++setSuccess(success : boolean) : void
+bg=red
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>230</x><y>631</y><w>230</w><h>130</h></coordinates><panel_attributes>/Report [Boundary]/
+--
++printReport() : void
++emailReport() : void
+/+generateReport(filename : string) : void/
+bg=red
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>860</x><y>631</y><w>280</w><h>80</h></coordinates><panel_attributes>GenerateReport[Control]
+--
+_+generateReport(reportType : string) : boolean_
+
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>661</y><w>430</w><h>50</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;
+m1=1
+m2=*
+generates</panel_attributes><additional_attributes>410;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1330</x><y>1131</y><w>340</w><h>70</h></coordinates><panel_attributes>CreateProviderDirectory[Control]
+--
+_+directoryReport() : void_
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1310</x><y>601</y><w>340</w><h>210</h></coordinates><panel_attributes>ServiceDatabase[Control]
+--
+-fileName : string
+-entries : ArrayList&lt;Record&gt;
+--
++ServiceDatabase(fileName : string)
+-loadData() : void
++saveData() : void
++addEntry(entry : Person) : int
++getEntry(number : int) : T
++getEntries() : ArrayList&lt;T&gt;
++removeEntry(entry : Record) : void
++clear() : void
++size() : int
+
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1190</x><y>21</y><w>340</w><h>250</h></coordinates><panel_attributes>Database&lt;T&gt; [Control]
+--
+_-dateFormat : string_
+_+dateValidator : DateFormatValidator_
+-fileName : string
+-entries : ArrayList&lt;Person&gt;
+--
+_+getDateFormat() : string_
++Database(fileName : string)
+-loadData() : void
++saveData() : void
++addEntry(entry : Person) : int
++getEntry(number : int) : T
++getEntries() : ArrayList&lt;T&gt;
++removeEntry(personToDelete : Person) : void
++clear() : void
++size() : int
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1130</x><y>651</y><w>200</w><h>50</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;
+m1=1
+m2=1
+accesses</panel_attributes><additional_attributes>10;20;180;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1040</x><y>241</y><w>170</w><h>410</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;
+m1=1
+m2=1
+accesses</panel_attributes><additional_attributes>10;390;10;350;110;350;110;10;150;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>220</x><y>1131</y><w>260</w><h>100</h></coordinates><panel_attributes>ProviderDirectoryReport [Boundary]
+--
+-count : int
+--
++generateReport() : void
+bg=red
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>1141</y><w>880</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+m1=*
+m2=1
+triggers</panel_attributes><additional_attributes>10;20;860;20</additional_attributes></element><element><id>Relation</id><coordinates><x>950</x><y>171</y><w>260</w><h>90</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;
+m1=1
+m2=1
+accesses</panel_attributes><additional_attributes>10;70;10;10;240;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>870</x><y>431</y><w>220</w><h>50</h></coordinates><panel_attributes>ManagerInterface [Boundary]
+--
+
+
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>870</x><y>961</y><w>220</w><h>60</h></coordinates><panel_attributes>ProviderInterface [Boundary]
+--
++billMember(provider : Provider) : void
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1660</x><y>1061</y><w>680</w><h>130</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;
+m1=1
+m2=1
+accesses</panel_attributes><additional_attributes>10;100;650;100;650;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>450</x><y>351</y><w>220</w><h>120</h></coordinates><panel_attributes>/UserInterface [Boundary]/
+--
+_+userIn : Scanner_
+--
++getString() : string
++getInt() : int
++getDouble() : double
+/+run() : void/
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1080</x><y>701</y><w>250</w><h>320</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;
+m1=1
+m2=1
+accesses</panel_attributes><additional_attributes>10;290;110;290;110;10;230;10</additional_attributes></element><element><id>Relation</id><coordinates><x>960</x><y>471</y><w>50</w><h>180</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;
+m1=1
+m2=1
+calls</panel_attributes><additional_attributes>10;10;10;160</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2200</x><y>981</y><w>230</w><h>90</h></coordinates><panel_attributes>ProviderDirectory [Entity]
+--
+-serviceNumber : int
+-serviceFee : double
+--
++getServiceCode() : int
++setServiceCode(servNumber : int) : void
++printServiceCode() : String
++setServiceFee(servFee : double) : void
++getServiceFee() : double
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2300</x><y>721</y><w>30</w><h>280</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;260</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>441</y><w>230</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;210;10</additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>251</y><w>170</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;100;10;10;150;10</additional_attributes></element><element><id>Relation</id><coordinates><x>490</x><y>461</y><w>400</w><h>560</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;540;380;540</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>501</y><w>100</w><h>150</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>80;130;80;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>221</y><w>30</w><h>430</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;410;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>211</y><w>100</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;80;20</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>301</y><w>100</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;80;20</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>401</y><w>100</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;80;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1340</x><y>261</y><w>170</w><h>360</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;
+m1=1
+m2=1
+accesses</panel_attributes><additional_attributes>140;340;140;190;10;190;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>980</x><y>1011</y><w>560</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+m1=1
+m2=1
+calls</panel_attributes><additional_attributes>530;120;530;70;10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1640</x><y>661</y><w>130</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=*</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>751</y><w>30</w><h>400</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;380</additional_attributes></element><element><id>Relation</id><coordinates><x>1520</x><y>201</y><w>180</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;160;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>81</y><w>220</w><h>60</h></coordinates><panel_attributes>/Main [Boundary]/
+--
+_+main(args : string[]) : void_
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>131</y><w>50</w><h>240</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;
+m1=1
+m2=*
+runs</panel_attributes><additional_attributes>10;10;10;220</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2120</x><y>571</y><w>440</w><h>160</h></coordinates><panel_attributes>ServiceRecord [Entity]
+--
++ServiceRecord(dateTime : Date, dateProvided : Date, providerNumber : int,
+memberNumber : int, serviceCode : int, comments : string, fee : double)
++ServiceRecord(dateTime : String, dateProvided : String, providerNumber : int,
+memberNumber : int, serviceCode : int, comments : string, fee : double)
++getServiceNumber() : int
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2040</x><y>651</y><w>100</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element></diagram>

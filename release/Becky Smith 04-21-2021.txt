@@ -1,0 +1,11 @@
+Name: Becky Smith
+Member Number: 000000000
+Address: 1831 University Blvd
+City: Tuscaloosa
+State: AL
+Zip Code: 35487
+
+Date of service: 04-20-2021
+Provider Name: Mary Doe
+Service Name: Aerobics
+

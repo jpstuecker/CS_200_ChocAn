@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>CS 200 Term Project -- Group 6</title>
+      <meta name="description" content="CS 200 Term Project">
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <link
+         href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="../style.css" />
+      <link rel="icon" href="../assets/ForIco.ico">
+   </head>
+
+   <body>
+      <nav>
+         <input type="checkbox" id="check">
+         <label for="check" class="checkbtn">
+         <i class="fa fa-bars"></i>
+         </label>
+         <label class="logo">				
+         <img src="../assets/Team icon.svg" alt="logo">
+         </label>
+         <ul>
+         <li><a href="Report.html">Requirements Home</a></li>
+         <li><a href="Glossary.html">Glossary</a></li>
+         <li><a class="active" href="UseCases.html">Use Cases</a></li>
+         </ul>
+      </nav>
+
+      <div class="bbstats">
+            <h2>Use Case Diagram</h2>
+            <img class="bbstats" src="../assets/usecasediagram.png">
+      </div>
+      <div class="box">
+      <h2>Use Case Descriptions</h2>
+         <ul>
+            <li>
+            <b>Use Case:</b> Validate Membership<br>
+            <b>Context:</b> Provider validates a customer's ChocAn subscription<br>
+            <b>Actor(s):</b> Provider<br>
+            <b>Main Success Scenario:</b><br>
+                  1. A member card is slid through the card reader on a terminal, then the terminal dials the ChocAn data center.<br>
+                  2. The ChocAn Data Center computer verifies the member number.<br>
+                  2.1 If valid, the word "Validated" appears on the one line display.<br>
+                  3. The provider has the option to bill ChocAn for a health care service provided.<br>
+
+            <b>Extensions:</b><br>
+                  2a. The card number is invalid.<br>
+                  2a.1. The word "Invalid" is displayed on the one line display indicating the number is invalid.<br>
+                  2a.2. The use case continues at step 1.<br>
+                  2b. The member is suspended.<br>
+                  2b.1. The word "Suspended" is displayed on the one line display indicating the member has not paid fees for at least one month.<br>
+                  2b.2. The use case continues at step 1.<br>
+                  <br>
+            </li>
+            <li>
+            <b>Use Case:</b> Email Member Report<br>
+            <b>Context:</b> Sends emails to members detailing the week's services<br>
+            <b>Actor(s):</b> Clock, Manager<br>
+            <b>Main Success Scenario:</b><br>
+                  1. The system selects a member. <br>
+                  2. The system gathers all reports made within the past 7 days for that member.<br>
+                  3. The system creates a list of all the reports to be sent to the member.<br>
+                  4. The system adds the members information on the report.(name, number, street address, city, state, ZIP)<br>
+                  5. The system composes an email with the report file attached to it and sends it to the corresponding member.<br>
+                  6. The system reiterates selecting a new member until all members serviced in the week have received emails.<br>
+            <b>Extensions:</b><br>
+                  5. The email fails to send.<br>
+                  5a.1. The system logs the error.<br>
+                  <br>
+            </li>
+            <li>
+            <b>Use Case:</b> Email Provider Report<br>
+            <b>Context:</b> Sends emails to providers detailing the week's services<br>
+            <b>Actor(s):</b> Clock, Manager, Provider<br>
+            <b>Main Success Scenario:</b><br>
+                  1. The system selects  a provider. <br>
+                  2. The system gathers the providers information.(name, number,street address, city, state, ZIP)<br>
+                  3. The system collects any and all service reports performed by the provider in the past 7 days.<br>
+                  4. The system counts the number of consultations that the provider completed in the week.<br>
+                  5. The system totals the fees for the week.<br>
+                  6. The system compiles a file with all the information gathered in steps 8-11.<br>
+                  7. The system sends an email to the provider with this file attached.<br>
+                  8. The system selects a new provider and repeats the process until all providers have received an email report for the week.<br>
+            <b>Extensions:</b><br>
+                  7. The email fails to send.<br>
+                  7a.1. The system logs the error.<br>
+                  <br>
+            </li>
+            <li>
+            <b>Use Case:</b> Email Summary Report<br>
+            <b>Context:</b> Sends emails to the manager for accounts payable with a summary report<br>
+            <b>Actor(s):</b> Clock, Manager<br>
+            <b>Main Success Scenario:</b><br>
+                  1. For each provider to be paid, the system writes the number of consultations performed by each provider and the total fee owed to the provider for that week to a report.<br>
+                  2. The system also calculates and lists the total number of providers who provided services, the total number of consultations, and the total fees owed and writes the totals to the report.<br>
+                  3. The report is sent to the manager of accounts payable.<br>
+            <b>Extensions:</b><br>
+                  3. The email fails to send.<br>
+                  3a.1. The system logs the error.<br>
+                  <br>
+            </li>
+            <li>
+            <b>Use Case:</b> Create EFT Report<br>
+            <b>Context:</b> Generates report to be used by banking software to pay providers electronically<br>
+            <b>Actor(s):</b> Clock, Manager<br>
+            <b>Main Success Scenario:</b><br>
+                  1. The system selects a provider.<br>
+                  2. If the provider was billed in the last week, the system writes the provider name, number, and total amount owed to the provider to an EFT file stored on the disk.<br>
+                  3. The system selects a new provider and repeats the process until all providers who were billed in the last week are written to the file.<br>
+            <b>Extensions:</b><br>
+                  N/A<br>
+                  <br>
+            </li>
+            <li>
+			<b>Use Case:</b> Update Member Information<br>
+            <b>Context:</b> The system adds, removes, or updates a member in the directory.<br>
+            <b>Actor(s):</b> Operator<br>
+            <b>Main Success Scenario:</b><br>
+                  1. The system prompts the operator the option to choose either to add, remove, or update a member.<br>
+                  2. The operator selects an option<br>
+                  3. The changes are saved in the system<br>
+                  4. The system returns to the main menu<br>
+            <b>Extensions:</b><br>
+                  N/A<br>
+			      <br>
+            </li> 
+            
+            <li>
+			<b>Use Case:</b> Add Member extends Update Member Information<br>
+            <b>Context:</b> The system adds a member in the directory.<br>
+            <b>Actor(s):</b> Operator<br>
+            <b>Main Success Scenario:</b><br>
+                  1. The operator chooses the add option<br>
+				  2. The system prompts the operator to input the members information (name, number, street address, city, state, zip)<br>
+				  3. The system adds the data of the member to the database<br>
+				  4. The system returns to the Update Member Information menu<br>
+            <b>Extensions:</b><br>
+                  2. The operator enters invalid information or omits information.<br>
+                  2a.1. The system displays an error message.<br>
+			      <br>
+            </li> 
+            
+            <li>
+			<b>Use Case:</b> Remove Member extends Update Member Information<br>
+            <b>Context:</b> The system removes a member from the directory.<br>
+            <b>Actor(s):</b> Operator<br>
+            <b>Main Success Scenario:</b><br>
+                  1. The operator chooses the remove option<br>
+				  2. The system displays a list of members that can be removed<br>
+				  3. The operator selects the member to be removed<br>
+				  4. The system removes the data of the member from the database<br>
+				  5. The system returns to the Update Member Information menu<br>
+            <b>Extensions:</b><br>
+                  N/A<br>
+			      <br>
+            </li> 
+            
+            <li>
+			<b>Use Case:</b> Update Member extends Update Member Information<br>
+            <b>Context:</b> The system updates a member in the directory.<br>
+            <b>Actor(s):</b> Operator<br>
+            <b>Main Success Scenario:</b><br>
+                  1. The operator chooses the update option<br>
+				  2. The system displays a list of members that can be update<br>
+				  3. The operator selects the member to be updated<br>
+				  4. The system then prompts the operator what information the member would like to update (name, number, street address, city, state, zip)<br>
+				  5. The operator selects the information they want to update.<br>
+				  6. The operator then inputs the new information<br>
+			      7. The system updates the data of the member from the database<br>
+			      8. The system returns to the Update Member Information menu<br>
+            <b>Extensions:</b><br>
+                  6. The operator enters invalid information or omits information.<br>
+                  6a.1. The system displays an error message.<br>
+			      <br>
+            </li> 
+            
+            <li>
+            <b>Use Case:</b> Update Provider Information<br>
+            <b>Context:</b> The system adds, removes, or updates a provider in the directory.<br>
+            <b>Actor(s):</b> Operator<br>
+            <b>Main Success Scenario:</b><br>
+                  1. The system prompts the operator the option to choose either to add, remove, or update a provider.<br>
+                  2. The operator selects an option<br>
+                  3. The changes are saved in the system<br>
+                  4. The system returns to the main menu<br>
+            <b>Extensions:</b><br>
+				  N/A<br>
+			      <br>
+            </li>  
+            
+            <li>
+			<b>Use Case:</b> Add Provider extends Update Provider Information<br>
+            <b>Context:</b> The system adds a provider in the directory.<br>
+            <b>Actor(s):</b> Operator<br>
+            <b>Main Success Scenario:</b><br>
+                  1. The operator chooses the add option<br>
+                  2. The system prompts the operator to input each peice of provider information (number, name, street address, city, state, zip) one by one<br>
+                  3. The system adds the data of the provider to the database<br>
+            <b>Extensions:</b><br>
+                  N/A<br>
+                  <br>
+            </li> 
+            
+            <li>
+			<b>Use Case:</b> Remove Provider extends Update Provider Information<br>
+            <b>Context:</b> The system removes a provider from the directory.<br>
+            <b>Actor(s):</b> Operator<br>
+            <b>Main Success Scenario:</b><br>
+                  1. The operator chooses the remove option<br>
+                  2. The system prompts for the number of the provider to be removed<br>
+                  3. The operator enters the number of the provider to be removed<br>
+                  4. The system removes the data of the provider from the database<br>
+            <b>Extensions:</b><br>
+                  4. The provider number is invalid and the system displays an error message<br>
+			<br>
+            </li> 
+            
+            <li>
+			<b>Use Case:</b> Update Provider extends Update Provider Information<br>
+            <b>Context:</b> The system updates a provider in the directory.<br>
+            <b>Actor(s):</b> Operator<br>
+            <b>Main Success Scenario:</b><br>
+                  1. The operator chooses the update option<br>
+                  2. The system prompts for the number of the provider to be updated<br>
+                  3. The operator enters the number of the provider to be updated<br>
+                  4. The system then prompts the operator to select what information the provider would like to update (name, number, street address, city, state, zip)<br>
+                  5. The operator selects the information they want to update
+                  6. The system promps for the information and the operator inputs the updated information<br>
+                  7. The system updates the data of the provider on the database<br>
+            <b>Extensions:</b><br>
+                  4. The provider number is invalid and the system displays an error message<br>
+			<br>
+            </li>
+            <li>  
+            <b>Use Case:</b> Request Provider Directory<br>
+            <b>Context:</b> The provider requests a Provider Directory, which lists the service names and their corresponding service codes and fees.<br>
+            <b>Actor(s):</b> Provider<br>
+            <b>Main Success Scenario:</b><br>
+                  1. The provider requests a Provider Directory.<br>
+                  2. The system generates a list of service names, codes, and fees.<br>
+                  3. The system emails the provider the list.<br>
+            <b>Extensions:</b><br>
+                  3. The email fails to send.<br>
+                  3a.1. The system returns to provider menu.<br>
+                  <br>
+            </li> 
+            <li>
+            <b>Use Case:</b> Run Main Accounting Procedure<br>
+            <b>Context:</b> Each Friday at midnight, the system runs the main accounting procedure and generates reports for various constituents.<br>
+            <b>Actor(s):</b> Clock<br>
+            <b>Main Success Scenario:</b><br>
+                  1. The system generates and sends a report for each member who received service in the previous week according to the Email Member Report use case.<br>
+                  2. The system generates and sends a report for each provider who billed ChocAn in the previous week according to the Email Provider Report use case.<br>
+                  3. The system generates an EFT report for each provider to be paid according to the Create EFT Report use case.<br>
+                  4. The system generates and sends a summary report to the manager of accounts payable according to the Email Summary Report use case.<br>
+            <b>Extensions:</b><br>
+                  N/A<br>
+			      <br>
+            </li>  
+            <li>
+            <b>Use Case:</b> Record Bill for Member<br>
+            <b>Context</b> The Provider adds the members bill to the system<br>
+            <b>Actor(s):</b> Provider<br>
+            <b>Main Success Scenario:</b><br>
+                  1. Member gives card to provider to scan.<br>
+                  2. Provider scans card.<br>
+                  3. The membership is validated, according to the Validate Membership use case.<br>
+                  4. The provider scans card again.<br>
+                  5. The provider enters the date of service into system in this format: MM-DD-YYYY <br>
+                  6. Provider looks up 6-digit service code and enters it into the system.<br>
+                  7. System displays the service corresponding to the entered service code and asks the provider to confirm the service.<br>
+                  8. Provider then can enter an optional comment up to 100 characters.<br>
+                  9. The system writes a record to the disk the current date and time, date of service, provider number, member number, service code, and comments.<br>
+                  10. System then shows fee to be paid.<br>
+                  11. Provider enters the current date and time, the date the service was provided, member name and number, service code, and fee to be paid into a verification form.<br>
+            <b>Extensions:</b><br>
+					5a. The provider enters an invalid date.<br>
+					5a.1. The system displays an error message.<br>
+					6a. The code entered is invalid.<br>
+      	            6a.1. The system displays an error message.<br>
+      	            11a. The provider enters invalid information or omits information.<br>
+      	            11a.1. The system displays an error message.<br>
+                  <br>
+            </li>
+         </ul>
+      </h2>
+      </div>
+   </body>
+</html>
